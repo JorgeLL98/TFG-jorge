@@ -270,6 +270,106 @@ header {
     overflow: hidden;
 }
 
+/*-------------------------------------------------------------*/
+
+
+
+
+#acordeon {
+    margin-left: 5%;
+    padding: 0;
+    border: 0;
+
+}
+
+ul.acorh,
+ul.acorh * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+ul.acorh {
+    margin: 10px auto;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    font-size: 18px;
+}
+
+ul.acorh li {
+    list-style: none;
+}
+
+ul.acorh li a {
+    display: block;
+    padding: 10px 10px 10px 20px;
+    background: #333;
+    color: #eee;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #666;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+ul.acorh li ul {
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    transition: .3s all ease-in;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+
+ul.acorh li li a {
+    padding: 10px 10px 10px 20px;
+    background: #999;
+    color: #000;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+ul.acorc li li:last-child a {
+    border-bottom: 0;
+}
+
+ul.acorh li:hover ul {
+    max-height: 300px;
+    transition: .3s all ease-in;
+}
+
+ul.acorh li a:hover {
+    background: #666;
+    color: #fff;
+}
+
+ul.acorh li li img {
+    max-width: 100px;
+    max-height: 100px;
+
+}
+
+ul.acorh li li a {
+    display: grid;
+    grid-template-columns: 2fr 1fr
+}
+
+
+
+/*-------------------------------------------------------------*/
+
+.options {}
+
+.border_rigth {
+    border-right: 1px solid gray;
+}
+
 .text_align {
     text-align: center;
 }
@@ -292,6 +392,14 @@ header {
 
 .pad_all1 {
     padding: 10px;
+}
+
+.pad_all2 {
+    padding: 30px;
+}
+
+.pad_top1 {
+    padding-top: 15px !important;
 }
 
 .pad_right1 {
@@ -511,6 +619,17 @@ figure {
     font-size: 26px
 }
 
+.box3 {
+    background: #111;
+    padding: 35px 30px 40px;
+    text-align: center;
+    margin-bottom: 3em;
+    border-top: grey solid 3px;
+    border-bottom: grey solid 3px;
+}
+
+.box3 h2 {}
+
 .address {
     float: left;
     width: 88px;
@@ -521,6 +640,83 @@ figure {
 .miscellaneous {
     font-size: 14px;
     line-height: 20px
+}
+
+.grid_perfil {
+    display: grid !important;
+    grid-template-columns: 1fr 5fr !important;
+}
+
+#grid_fabricar {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+
+}
+
+.imagen_borrar:hover {
+    filter: brightness(70%) !important;
+}
+
+#container {
+    justify-self: center;
+}
+
+#contenedor_torre {
+    border: 8px solid rgba(128, 128, 128, 0.432);
+
+    background-color: rgba(245, 245, 245, 0.781);
+    width: 700px;
+    height: 700px;
+
+
+}
+
+#contenedor_placa {
+    width: 220px;
+    height: 250px;
+    border: 3px solid rgba(128, 128, 128, 0.432);
+    background-color: rgba(90, 83, 83, 0.781);
+    position: absolute;
+    top: 850px;
+    right: 660px;
+    z-index: 2;
+
+}
+
+#contenedor_procesador {
+    width: 200px;
+    height: 120px;
+    border: 3px solid rgba(128, 128, 128, 0.432);
+    background-color: rgba(90, 83, 83, 0.781);
+}
+
+#contenedor_ram {
+    width: 200px;
+    height: 120px;
+    border: 3px solid rgba(128, 128, 128, 0.432);
+    background-color: rgba(90, 83, 83, 0.781);
+}
+
+#contenedor_ventProcesador {
+    width: 200px;
+    height: 120px;
+    border: 3px solid rgba(128, 128, 128, 0.432);
+    background-color: rgba(90, 83, 83, 0.781);
+}
+
+#contenedor_grafica {
+    width: 200px;
+    height: 120px;
+    border: 3px solid rgba(128, 128, 128, 0.432);
+    background-color: rgba(90, 83, 83, 0.781);
+}
+
+#contenedor_fuenteAlim {
+    width: 200px;
+    height: 120px;
+    border: 3px solid rgba(128, 128, 128, 0.432);
+    background-color: rgba(90, 83, 83, 0.781);
 }
 
 /* ============================= footer ====================== */
@@ -547,6 +743,10 @@ footer a:hover {}
     float: left;
     font-weight: bold;
     color: #fff
+}
+
+#ContactForm .perfil_c {
+    width: 150px !important;
 }
 
 #ContactForm .wrapper {
@@ -665,3 +865,5 @@ footer a:hover {}
 #form_1 .links a {
     color: #fff
 }
+
+@media all and (max-width: 850px) {}

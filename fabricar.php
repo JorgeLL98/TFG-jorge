@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,12 +11,145 @@
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 	<link rel="icon" href="images/logo.ico" type="image/x-icon" media="all">
-	<script type="text/javascript" src="js/jquery-1.6.js"></script>
-	<script type="text/javascript" src="js/cufon-yui.js"></script>
-	<script type="text/javascript" src="js/cufon-replace.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<!-- <script type="text/javascript" src="js/cufon-yui.js"></script>
+	<script type="text/javascript" src="js/cufon-replace.js"></script> -->
 	<script type="text/javascript" src="js/Shanti_400.font.js"></script>
 	<script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>
 	<script type="text/javascript" src="js/funciones.js"></script>
+	<script type="text/javascript">
+		var elementDrag
+		var cont_torre = 0
+		var cont_placaBase = 0
+		var cont_procesador = 0
+		var cont_ram = 0
+		var cont_grafica = 0
+		var cont_alimentacion = 0
+		var cont_ventilador = 0
+
+		function autoEscalarAContenedor(id) {
+			var elemento = getComputedStyle(document.querySelector("#" + id))
+			document.getElementById(elementDrag).style.width = elemento.width
+			document.getElementById(elementDrag).style.height = elemento.height
+		}
+
+		function allowDrop(ev) {
+			ev.preventDefault()
+		}
+
+		function drag(ev) {
+			ev.dataTransfer.setData("img", ev.target.id)
+			elementDrag = ev.target.id
+		}
+
+
+
+		function drop(ev) {
+			let elementDragParent = document.getElementById(elementDrag).parentElement
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("img")
+			autoEscalarAContenedor(ev.target.id)
+			ev.target.appendChild(document.getElementById(data))
+			var copyimg = document.createElement("img");
+			var original = document.getElementById(data);
+			var elemento = getComputedStyle(document.querySelector("#" + data));
+
+			copyimg.src = original.src
+			copyimg.id = "copy-" + original.id
+			copyimg.className = "imagen_borrar"
+			copyimg.draggable = true
+			copyimg.addEventListener("dragstart", drag)
+			elementDragParent.appendChild(copyimg)
+			var compr_id = original.parentElement.id.split("_")[1]
+
+			if (compr_id == "torre" && cont_torre < 1) {
+
+				cont_torre++
+
+				pidoDatos("placas")
+
+				setTimeout(function() {
+					$claves = Object.keys($resultado)
+					for ($i = 0; $i < $claves.length; $i++) {
+						//AQUIIIIIIIIIIIIIIIIIIIIIIII
+						$("#placa_base").append("<li id='placa" + $resultado[$i].id_placa + "'><a href='" + $resultado[$i].link_fabricante + "'><p>" + "Marca: " + $resultado[$i].marca_placa +
+							"<br>Modelo: " + $resultado[$i].modelo_placa + "<br>Precio: " + $resultado[$i].precio_placa + "€" +
+							"</p><img class='imagen_borrar' id='img_placa_" + $resultado[$i].id_placa + "' draggable='true' ondragstart='drag(event)' src='" + $resultado[$i].ruta_imagen + "'></a></li>")
+					}
+				}, 1000)
+
+			} else if (compr_id == "placa") {
+				cont_placaBase++
+
+			} else if (compr_id == "procesador") {
+				cont_procesador++
+
+			} else if (compr_id == "ram") {
+
+			} else if (compr_id == "ventProcesador") {
+
+			} else if (compr_id == "grafica") {
+
+			} else if (compr_id == "fuenteAlim") {
+
+			}
+
+		}
+
+		//AJAX
+		function pidoDatos(str) {
+			if (str == "") {
+				document.getElementById("contenedor_torre").style.color = "red";
+				document.getElementById("contenedor_torre").innerHTML = "Algo ha salido mal";
+				return;
+			} else {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						$resultado = jQuery.parseJSON(this.responseText);
+					}
+				};
+				xmlhttp.open("GET", "php-manejoDatos/fabricar_pc.php?q=" + str, true);
+				xmlhttp.send();
+			}
+		}
+
+		pidoDatos("torres")
+
+
+		$(window).on("load", function() {
+			//BORRAR IMAGENES CON CLASE imagen_borrar
+			document.querySelectorAll('.contenedor_fabricar').forEach(function(elem) {
+				elem.addEventListener("click", function() {
+					if (elem.children[elem.childElementCount - 1].className == "imagen_borrar") {
+						elem.children[elem.childElementCount - 1].remove()
+					}
+
+				})
+			})
+
+			//CREAR DESPLEGABLE DE TORRES
+			setTimeout(function() {
+				$("#torre").parent().one("mouseenter", function() {
+					$claves = Object.keys($resultado)
+					for ($i = 0; $i < $claves.length; $i++) {
+						$("#torre").append("<li id='torre" + $resultado[$i].id_torre + "'><a href='" + $resultado[$i].link_fabricante + "'><p>" + "Marca: " + $resultado[$i].marca_torre +
+							"<br>Modelo: " + $resultado[$i].modelo_torre + "<br>Precio: " + $resultado[$i].precio_torre + "€" +
+							"</p><img class='imagen_borrar' id='img_torre_" + $resultado[$i].id_torre + "' draggable='true' ondragstart='drag(event)' src='" + $resultado[$i].ruta_imagen + "'></a></li>")
+					}
+				})
+			}, 400)
+
+			/* 			$("#placa_base").parent().one("mouseenter", function() {
+
+						})
+
+						$("#procesador").parent().one("mouseenter", function() {
+
+						}) */
+
+		});
+	</script>
 </head>
 
 <body id="page3">
@@ -30,151 +166,68 @@
 			</div>
 		</div>
 	</div>
-	<div class="main">
-		<!-- content -->
-		<section id="content">
-			<div class="wrapper">
-				<article class="col1">
-					<h3>Medium Hosting Plan Features</h3>
-					<p class="pad_bot1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor, justo
-						sodales fermentum consectetur, libero tellus fermentum feugiat molestie orci enim sit amet
-						libero. Vivamus non velit in nibh tincidunt tristique tincidunt leo. Phasellus eget nulla odio.
-						Maecenas gravida lorem integer imperdiet euismod neque quis luctus.</p>
-					<div class="wrapper">
-						<article class="col2 pad_right1">
-							<ul class="list2">
-								<li><img src="images/icon_1.png" alt="">500 GB Disc Space</li>
-								<li><img src="images/icon_5.png" alt="">Unlimited Data Transfer</li>
-								<li><img src="images/icon_6.png" alt="">SSL, FTP, Stats</li>
-							</ul>
-						</article>
-						<article class="col2 pad_right1">
-							<ul class="list2">
-								<li><img src="images/icon_4.png" alt="">1000 Email Accounts</li>
-								<li><img src="images/icon_8.png" alt="">Free Domain Name</li>
-								<li><img src="images/icon_9.png" alt="">Free Site Builder</li>
-							</ul>
-						</article>
-						<article class="col2">
-							<ul class="list2">
-								<li><img src="images/icon_2.png" alt="">Best Support in the industry</li>
-								<li><img src="images/icon_3.png" alt="">Unlimited Domain Hosting</li>
-								<li><img src="images/icon_7.png" alt="">CGI, Ruby (RoR), Perl, PHP, MySQL</li>
-							</ul>
-						</article>
-					</div>
-				</article>
-			</div>
-		</section>
-	</div>
+
+	<!-- content -->
+
 	<div class="body3">
-		<div class="main">
+		<div class="main" style="width: 100%; height: 1000px;">
 			<section id="content2">
-				<div class="wrapper">
-					<article class="col3 pad_right1">
-						<p class="pad_bot1"><strong class="color3">FeaturesDetails</strong></p>
-						<div class="wrapper pad_bot2">
-							<div class="col4">
-								<ul>
-									<li>Unlimited</li>
-									<li>Unlimited</li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li>Included FREE</li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li>Unlimited</li>
-									<li>Unlimited</li>
-									<li>Unlimited</li>
+				<div class="box3">
+					<h3>Bienvenido a la fabrica Obrex</h3>
+					<p></p>
+				</div>
+
+				<div id="grid_fabricar">
+					<div id="acordeon">
+						<ul class="acorh">
+							<li><a href="#">Torre</a>
+								<ul id="torre">
 								</ul>
-							</div>
-							<ul>
-								<li>GB of Disk Space</li>
-								<li>Hosted Domains Allowed</li>
-								<li>Free Domain Name</li>
-								<li>Instant Activation</li>
-								<li>International Domain Names</li>
-								<li>POP3/POP3 Secure Email Accounts</li>
-								<li>IMAP/Secure IMAP Email Accounts</li>
-								<li>GB's of Site Transfer (Bandwidth)</li>
-							</ul>
-						</div>
-						<p class="pad_bot1"><strong class="color3">e-Commerce FeaturesDetails</strong></p>
-						<div class="wrapper">
-							<div class="col4">
-								<ul>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
+							</li>
+							<li><a href="#">Placa base</a>
+								<ul id="placa_base">
+
 								</ul>
-							</div>
-							<ul>
-								<li>SSL Secure Server</li>
-								<li>OS Commerce Shopping Cart</li>
-								<li>Agora Shopping Cart</li>
-								<li>Free Generated Certificate</li>
-								<li>Password Protected Directories</li>
-								<li>Open PGP/GPG Encryption</li>
-								<li>Paypal support</li>
-								<li>Merchant Account Support</li>
-							</ul>
-						</div>
-					</article>
-					<article class="col3">
-						<p class="pad_bot1"><strong class="color3">Bonus Features</strong></p>
-						<div class="wrapper pad_bot2">
-							<div class="col4">
-								<ul>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
+							</li>
+							<li><a href="#">Procesador</a>
+								<ul id="procesador">
+
 								</ul>
-							</div>
-							<ul>
-								<li>Live Support in cPanel </li>
-								<li>Bulletin Board (Message Forum) </li>
-								<li>Form-mail Script </li>
-								<li>PHP Nuke </li>
-								<li>1 click WordPress Install </li>
-								<li>1 click b2evolution Install </li>
-								<li>1 click Joomla Install </li>
-								<li>Web Blogs/Wordpress/b2evolution</li>
-							</ul>
-						</div>
-						<p class="pad_bot1"><strong class="color3">Technology</strong></p>
-						<div class="wrapper">
-							<div class="col4">
-								<ul>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
-									<li><img src="images/marker_3.png" alt=""></li>
+							</li>
+							<li><a href="#">RAM</a>
+								<ul id="ram">
+
 								</ul>
-							</div>
-							<ul>
-								<li>Quad Processor Servers</li>
-								<li>Linux Operating System</li>
-								<li>Customized Apache Web Server</li>
-								<li>UPS Power Back-up Generator</li>
-								<li>24/7 Monitoring</li>
-								<li>Courtesy Site Backups</li>
-								<li>OC-96 Backbone Connection</li>
-								<li>400 Gigabits Per SecondSelf-signed SSL</li>
-							</ul>
-						</div>
-					</article>
+							</li>
+							<li><a href="#">Tarjeta gráfica</a>
+								<ul id="tarjeta_grafica">
+
+								</ul>
+							</li>
+							<li><a href="#">Fuente de alimentación</a>
+								<ul id="fuente_alimentacion">
+
+								</ul>
+							</li>
+							<li><a href="#">Ventilador procesador</a>
+								<ul id="ventilador_procesador">
+
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+					<div id="container">
+						<div id="contenedor_torre" class="contenedor_fabricar" ondrop=drop(event) ondragover="allowDrop(event)"></div>
+						<div id="contenedor_placa" class="contenedor_fabricar" ondrop=drop(event) ondragover="allowDrop(event)"></div>
+						<div id="contenedor_procesador" class="contenedor_fabricar" ondrop=drop(event) ondragover="allowDrop(event)"></div>
+						<div id="contenedor_ram" class="contenedor_fabricar" ondrop=drop(event) ondragover="allowDrop(event)"></div>
+						<div id="contenedor_ventProcesador" class="contenedor_fabricar" ondrop=drop(event) ondragover="allowDrop(event)"></div>
+						<div id="contenedor_grafica" class="contenedor_fabricar" ondrop=drop(event) ondragover="allowDrop(event)"></div>
+						<div id="contenedor_fuenteAlim" class="contenedor_fabricar" ondrop=drop(event) ondragover="allowDrop(event)"></div>
+					</div>
+
+
 				</div>
 			</section>
 			<!-- / content  -->
@@ -189,9 +242,7 @@
 		</footer>
 		<!-- / footer -->
 	</div>
-	<script type="text/javascript">
-		Cufon.now();
-	</script>
+
 </body>
 
 </html>

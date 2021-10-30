@@ -63,4 +63,72 @@ if (isset($_POST["login"])) {
         header("Location: ../login.php?e=3");
         exit();
     }
+    $con->close();
+}
+
+if (isset($_POST["perfil"])) {
+    include 'conexion.php';
+
+    $id = $_COOKIE["id"];
+
+    if (empty($_POST["passwd_nuevo"])) {
+        $passwd_nuevo = sha1($_POST["passwd"]);
+        $passwd = sha1($_POST["passwd"]);
+        unset($_POST["passwd"]);
+    } else {
+        $passwd_nuevo = sha1($_POST["passwd_nuevo"]);
+        unset($_POST["passwd_nuevo"]);
+        $passwd = sha1($_POST["passwd"]);
+        unset($_POST["passwd"]);
+    }
+
+
+    $seleccionar = 'SELECT * FROM obrex_users WHERE ID_USERS ="' . $id . '"';
+
+    $row = mysqli_fetch_row(mysqli_query($con, $seleccionar));
+
+    if ($passwd === $row[4]) {
+
+        if (empty($_POST["name_nuevo"])) {
+            $name_nuevo = $_COOKIE["nombre"];
+        } else {
+            $name_nuevo = $_POST["name_nuevo"];
+        }
+
+        if (empty($_POST["lastName_nuevo"])) {
+            $lastName_nuevo = $_COOKIE["apellidos"];
+        } else {
+            $lastName_nuevo = $_POST["lastName_nuevo"];
+        }
+
+        if (empty($_POST["email_nuevo"])) {
+            $email_nuevo = str_replace("%40", "@", $_COOKIE["email"]);
+        } else {
+            $email_nuevo = $_POST["email_nuevo"];
+        }
+
+
+
+        $update = 'UPDATE obrex_users SET NOMBRE = "' . $name_nuevo . '", APELLIDOS = "' . $lastName_nuevo . '", EMAIL = "' . $email_nuevo . '", CONTRA = "' . $passwd_nuevo . '" WHERE ID_USERS = "' . $id . '";';
+        $seleccionar = 'SELECT * FROM obrex_users WHERE ID_USERS ="' . $id . '"';
+
+        $row = mysqli_fetch_row(mysqli_query($con, $seleccionar));
+
+
+        if (mysqli_query($con, $update)) {
+            setcookie("email", $email_nuevo, time() + (86400 * 30), "/");
+            setcookie("nombre", $name_nuevo, time() + (86400 * 30), "/");
+            setcookie("apellidos", $lastName_nuevo, time() + (86400 * 30), "/");
+
+            header("Location: ../perfil.php?c=0");
+            exit();
+        } else {
+            header("Location: ../perfil.php?e=1");
+            exit();
+        }
+    } else {
+        header("Location: ../perfil.php?e=2");
+        exit();
+    }
+    $con->close();
 }

@@ -8,9 +8,9 @@
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 	<link rel="icon" href="images/logo.ico" type="image/x-icon" media="all">
-	<script type="text/javascript" src="js/jquery-1.6.js"></script>
-	<script type="text/javascript" src="js/cufon-yui.js"></script>
-	<script type="text/javascript" src="js/cufon-replace.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<!-- <script type="text/javascript" src="js/cufon-yui.js"></script>
+	<script type="text/javascript" src="js/cufon-replace.js"></script> -->
 	<script type="text/javascript" src="js/Shanti_400.font.js"></script>
 	<script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>
 	<script type="text/javascript" src="js/funciones.js"></script>
@@ -30,9 +30,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="main">
+
 		<!-- content -->
-	</div>
+
 	<div class="body3">
 		<div class="main">
 			<section id="content2">
