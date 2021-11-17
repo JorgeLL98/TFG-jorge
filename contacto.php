@@ -10,9 +10,9 @@
 	<link rel="icon" href="images/logo.ico" type="image/x-icon" media="all">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<!-- <script type="text/javascript" src="js/cufon-yui.js"></script>
-	<script type="text/javascript" src="js/cufon-replace.js"></script> -->
+	<script type="text/javascript" src="js/cufon-replace.js"></script> 
 	<script type="text/javascript" src="js/Shanti_400.font.js"></script>
-	<script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>
+	<script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>-->
 	<script type="text/javascript" src="js/funciones.js"></script>
 </head>
 
@@ -57,7 +57,7 @@
 						</form>
 					</article>
 					<article class="col1">
-						<h3 class="pad_top1"> Estamos abiertos</h3>
+						<h3 class="pad_top1"> Estamos atentos</h3>
 						<p class="miscellaneous">No dudes en contactar conmigo si tienes alguna duda o sugerencia. Contestaré en un plazo de 1 o 2 dias hábiles.</p>
 					</article>
 				</div>

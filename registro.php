@@ -10,9 +10,9 @@
 	<link rel="icon" href="images/logo.ico" type="image/x-icon" media="all">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<!-- <script type="text/javascript" src="js/cufon-yui.js"></script>
-	<script type="text/javascript" src="js/cufon-replace.js"></script> -->
+	<script type="text/javascript" src="js/cufon-replace.js"></script> 
 	<script type="text/javascript" src="js/Shanti_400.font.js"></script>
-	<script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>
+	<script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>-->
 	<script type="text/javascript" src="js/funciones.js"></script>
 </head>
 
