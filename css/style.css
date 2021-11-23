@@ -583,6 +583,26 @@ figure {
     position: relative
 }
 
+
+.button2 {
+    display: inline-block;
+    background: url(../images/button1_bg.gif) top repeat-x;
+    font-size: 24px;
+    color: #2956b8a2;
+    padding: 0 18px;
+    text-decoration: none;
+    letter-spacing: -2px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+
+}
+
+.button2:hover {
+    color: #111
+}
+
+
 .button1:hover {
     color: #111
 }
@@ -649,26 +669,94 @@ figure {
 
 }
 
+
+#a_perfil {}
+
+.grid_piezas {
+    display: grid !important;
+    grid-template-columns: 1fr 4fr !important;
+
+}
+
+
+#a_piezas {}
+
+#tablaPiezas img {
+    width: 60px;
+    height: 60px;
+}
+
+
 #grid_fabricar {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr;
+
 
 }
+
+
+
+#presupuestoTabla {}
+
 
 #presupuesto {
     width: 100%;
     height: 300px;
     background: #111;
-    padding: 35px 0px 40px;
+    /* padding: 35px 0px 40px; */
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
     border-top: #75b9ce7e solid 3px;
     border-bottom: #75b9ce7e solid 3px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+
+
 }
-#precio_total
+
+#pres_grid {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+
+#presupuesto h3 {
+    font-size: 25px;
+
+    text-decoration: underline;
+    color: #236d83b2;
+    letter-spacing: 1px;
+}
+
+#presupuesto button {
+
+
+    align-self: center;
+
+}
+
+#precio_total {
+    font-size: 40px;
+    color: #fff;
+
+    letter-spacing: -1px;
+    align-self: center;
+
+}
+
+#piezas_presupuesto {
+    font-size: 15px;
+
+}
+
+#piezas_presupuesto li span {
+
+    font-size: 25px;
+}
+
+
+
+
+
 
 .imagen_borrar:hover {
     filter: brightness(70%) !important;
@@ -728,7 +816,7 @@ figure {
 }
 
 #contenedor_grafica {
-    width: 225px;
+    width: 245px;
     height: 120px;
     position: relative;
     bottom: 995px;
@@ -752,6 +840,14 @@ figure {
     bottom: 1526px;
     left: 421px;
     display: none;
+}
+
+.info_p {
+    font-size: 15px;
+
+    display: none;
+    letter-spacing: -1px;
+    align-self: center;
 }
 
 /* ============================= footer ====================== */
@@ -870,7 +966,7 @@ footer a:hover {}
 #form_1 .col2 {
     padding-left: 20px;
     width: 65px;
-    padding-bottom: 17px
+    padding-bottom: 17px;
 }
 
 #form_1 .input {

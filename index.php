@@ -69,13 +69,7 @@
 	<script type="text/javascript">
 		Cufon.now();
 	</script>
-	<!-- <script>
-		jQuery(document).ready(function($) {
-			$('#form_1').jqTransform({
-				imgPath: 'jqtransformplugin/img/'
-			});
-		});
-	</script> -->
+
 </body>
 
 </html>

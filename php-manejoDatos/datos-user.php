@@ -107,8 +107,6 @@ if (isset($_POST["perfil"])) {
             $email_nuevo = $_POST["email_nuevo"];
         }
 
-
-
         $update = 'UPDATE obrex_users SET NOMBRE = "' . $name_nuevo . '", APELLIDOS = "' . $lastName_nuevo . '", EMAIL = "' . $email_nuevo . '", CONTRA = "' . $passwd_nuevo . '" WHERE ID_USERS = "' . $id . '";';
         $seleccionar = 'SELECT * FROM obrex_users WHERE ID_USERS ="' . $id . '"';
 
@@ -130,5 +128,11 @@ if (isset($_POST["perfil"])) {
         header("Location: ../perfil.php?e=2");
         exit();
     }
+
+
+
+
     $con->close();
 }
+
+

@@ -15,12 +15,26 @@
 	<script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>-->
 	<script type="text/javascript" src="js/funciones.js"></script>
 	<script type="text/javascript">
+		var precioTotal = 0
+
+		function pidoPresupuesto() {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					$resultado = jQuery.parseJSON(this.responseText);
+				}
+			};
+			xmlhttp.open("GET", "php-manejoDatos/fabricar_pc.php?q=pedirPresupuesto");
+			xmlhttp.send();
+		}
+
+		pidoPresupuesto()
 		window.addEventListener("load", function() {
 			var bienvenida = document.getElementById("mens_bienvenida");
 			bienvenida.innerHTML = "¡Bienvenido " + getCookie("nombre") + ", este es tu perfil!";
 
 			document.getElementById("a_perfil").addEventListener("click", function(event) {
-				console.log(event.target.innerHTML)
+
 				var mi_cuenta = document.getElementById("mi_cuenta")
 				var mis_ordenadores = document.getElementById("mis_ordenadores")
 				if (event.target.innerHTML.includes("Mi cuenta")) {
@@ -29,9 +43,38 @@
 
 
 				} else if (event.target.innerHTML.includes("Mis ordenadores")) {
+					$("#presupuestoTabla").empty()
 					mi_cuenta.style.display = "none"
 					mis_ordenadores.style.display = "block"
 
+					if ($resultado[0].estado == 3) {
+						document.getElementById("e3").style.display = "block"
+					} else {
+
+
+
+						setTimeout(function() {
+							$claves = Object.keys($resultado)
+							for ($i = 0; $i < $claves.length; $i++) {
+								precioTotal = parseInt($resultado[$i].torre_p.split("|")[2]) + parseInt($resultado[$i].placa_p.split("|")[2]) +
+									parseInt($resultado[$i].procesador_p.split("|")[2]) + parseInt($resultado[$i].ventprocesador_p.split("|")[2]) +
+									parseInt($resultado[$i].ram_p.split("|")[2]) + parseInt($resultado[$i].grafica_p.split("|")[2]) +
+									parseInt($resultado[$i].fuentealim_p.split("|")[2]) + parseInt($resultado[$i].disco_p.split("|")[2]) + "€"
+
+								$("#presupuestoTabla").append("<table><tr><th>Torre</th><th>Placa Base</th><th>Procesador</th> " +
+									"<th>Cooler</th><th>RAM</th><th>Tarjeta gráfica</th><th>Fuente de alimentación</th><th>Disco</th><th>Precio total</th>" +
+									"</tr><tr><td><a href='" + $resultado[$i].torre_p.split("|")[3] + "'>" + $resultado[$i].torre_p.split("|")[0] + " " + $resultado[$i].torre_p.split("|")[1] +
+									"</a></td><td><a href='" + $resultado[$i].placa_p.split("|")[3] + "'>" + $resultado[$i].placa_p.split("|")[0] + " " + $resultado[$i].placa_p.split("|")[1] +
+									"</a></td><td><a href='" + $resultado[$i].procesador_p.split("|")[3] + "'>" + $resultado[$i].procesador_p.split("|")[0] + " " + $resultado[$i].procesador_p.split("|")[1] +
+									"</a></td><td><a href='" + $resultado[$i].ventprocesador_p.split("|")[3] + "'>" + $resultado[$i].ventprocesador_p.split("|")[0] + " " + $resultado[$i].ventprocesador_p.split("|")[1] +
+									"</a></td><td><a href='" + $resultado[$i].ram_p.split("|")[3] + "'>" + $resultado[$i].ram_p.split("|")[0] + " " + $resultado[$i].ram_p.split("|")[1] +
+									"</a></td><td><a href='" + $resultado[$i].grafica_p.split("|")[3] + "'>" + $resultado[$i].grafica_p.split("|")[0] + " " + $resultado[$i].grafica_p.split("|")[1] +
+									"</a></td><td><a href='" + $resultado[$i].fuentealim_p.split("|")[3] + "'>" + $resultado[$i].fuentealim_p.split("|")[0] + " " + $resultado[$i].fuentealim_p.split("|")[1] +
+									"</a></td><td><a href='" + $resultado[$i].disco_p.split("|")[3] + "'>" + $resultado[$i].disco_p.split("|")[0] + " " + $resultado[$i].disco_p.split("|")[1] +
+									"</a></td><td>" + precioTotal + "</td></tr></table><br>")
+							}
+						}, 1000)
+					}
 
 				} else if (event.target.innerHTML.includes("Cerrar sesión")) {
 					deleteAllCookies()
@@ -75,7 +118,7 @@
 	<div class="body3">
 		<div class="main">
 			<section id="content">
-				<div class="grid_perfil ">
+				<div class="grid_perfil">
 					<article class="border_rigth">
 						<h3>Tu perfil</h3>
 						<ul id="a_perfil">
@@ -125,7 +168,7 @@
 																				} else {
 																					echo 'display:none;';
 																				}  ?>">No se pudo completar la operación, inténtelo mas tarde</div>
-									<div name="e1" id="e1" style="color: red; <?php
+									<div name="e2" id="e2" style="color: red; <?php
 																				if (isset($_GET["e"])) {
 																					if ($_GET["e"] == 2) {
 																						echo 'display:block;';
@@ -141,8 +184,9 @@
 							</form>
 						</div>
 						<div id="mis_ordenadores" style="display: none;">
-							<!-- HAY QUE HACERLO CUANDO PUEDA HACER PRESUPUESTOS -->
-							<p>EJEMPLO</p>
+							<!-- presupuestos -->
+							<div id="presupuestoTabla"></div>
+							<div name="e3" id="e3" style="color: red; display:none;">No existen presupuestos</div>
 						</div>
 
 					</article>
@@ -162,9 +206,7 @@
 		</footer>
 		<!-- / footer -->
 	</div>
-	<script type="text/javascript">
-		Cufon.now();
-	</script>
+
 </body>
 
 </html>
