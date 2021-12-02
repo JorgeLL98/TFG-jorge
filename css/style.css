@@ -303,7 +303,7 @@ header {
     margin-bottom: 20px;
 }
 
-.menu_ul ul {}
+
 
 .menu_ul ul li {
 
@@ -313,10 +313,19 @@ header {
     border-bottom: 1px solid #888;
 }
 
-.menu ul li:hover {
-    color: white;
-    transition: 1s;
+.menu_ul a.options:hover {
+    margin-left: 15px;
+    transition: 0.5s;
+    color: #fff;
 }
+
+.menu_ul a.options {
+    margin-left: 0px;
+    transition: 0.5s;
+    color: #888;
+}
+
+
 
 #mens_bienvenida+p {
     font-size: 17px;
@@ -411,7 +420,7 @@ ul.acorh li li a {
 
 /*-------------------------------------------------------------*/
 
-.options {}
+
 
 .border_rigth {
     border-right: 1px solid gray;
@@ -752,17 +761,14 @@ figure {
 
 }
 
-#presupuestoTabla {
-    
-
-}
+#presupuestoTabla {}
 
 #presupuestoTabla table {
 
     margin-bottom: 35px;
     border-top: 7px inset rgb(160, 159, 159);
     border-left: 7px inset rgb(160, 159, 159);
-    
+
     padding: 15px !important;
 
 }
@@ -771,7 +777,7 @@ figure {
     width: 40px;
     margin: 10px;
     font-size: 15px;
-    
+
 
 
 }
@@ -780,7 +786,7 @@ figure {
     font-size: 20px;
     padding: 15px;
     text-align: center;
-    
+
     border-right: 1px solid rgb(160, 159, 159) !important;
     width: 50px !important;
 }
@@ -795,10 +801,18 @@ figure {
 
 }
 
-#presupuestoTabla td a {}
+#presupuestoTabla td a {
+line-height: 5px;
+font-size: 12px;
+
+}
 
 #presupuestoTabla button {
     margin-top: 30px;
+}
+
+#presupuestoTabla img {
+    width: 50px;
 }
 
 
@@ -1067,16 +1081,8 @@ figure {
 }
 
 /* ============================= keyframes ====================== */
-/*NO FUNCIONA*/
-@keyframes linkAnimation {
-    0% {
-        background-color: #79bd00;
-    }
 
-    /*     100% {
-        color: #dd00ff;
-    } */
-}
+
 
 /* ============================= footer ====================== */
 footer {

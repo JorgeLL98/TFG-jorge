@@ -18,7 +18,11 @@
 		var precioTotal = 0
 
 
-		
+
+
+
+
+
 		function borrarPresupuesto(id) {
 			pidoPresupuesto("borrarPresupuesto_" + id + "")
 			setTimeout(function() {
@@ -30,8 +34,6 @@
 				window.location.reload()
 
 			}, 1000)
-
-
 		}
 
 		function pidoPresupuesto(str) {
@@ -132,7 +134,7 @@
 					<article class="border_rigth menu_ul">
 						<h3>Mi cuenta</h3>
 						<ul id="a_perfil">
-							<li><a class="options">Cambiar mi cuenta</a></li>
+							<li><a class="options desplazar">Cambiar mi cuenta</a></li>
 							<li><a class="options">Mis ordenadores</a></li>
 							<li><a class="options">Cerrar sesión</a></li>
 						</ul>

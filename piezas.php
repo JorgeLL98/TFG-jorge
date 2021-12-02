@@ -61,15 +61,17 @@
 		$(window).on("load", function() {
 
 			$("#a_piezas").click(function(event) {
+				document.getElementById("presupuestoTabla").style.display = "block"
+				
 				if (event.target.innerHTML.includes("Torres")) {
 					$(".p").remove()
 					pidoPiezas("torres")
 					setTimeout(function() {
 						$claves = Object.keys($resultado)
 						for ($i = 0; $i < $claves.length; $i++) {
-							$("#tablaPiezas").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_torre + "</td><td class='p'>" + $resultado[$i].modelo_torre +
-								"</td><td class='p'>" + $resultado[$i].precio_torre + "</td><td class='p'><a href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
-								"</td><td class='p'><a href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
+							$("#presupuestoTabla").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_torre + "</td><td class='p'>" + $resultado[$i].modelo_torre +
+								"</td><td class='p'>" + $resultado[$i].precio_torre + "</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
+								"</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
 						}
 					}, 1000)
 				} else if (event.target.innerHTML.includes("Placas base")) {
@@ -78,9 +80,9 @@
 					setTimeout(function() {
 						$claves = Object.keys($resultado)
 						for ($i = 0; $i < $claves.length; $i++) {
-							$("#tablaPiezas").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_placa + "</td><td class='p'>" + $resultado[$i].modelo_placa +
-								"</td><td class='p'>" + $resultado[$i].precio_placa + "</td><td class='p'><a href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
-								"</td><td class='p'><a href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
+							$("#presupuestoTabla").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_placa + "</td><td class='p'>" + $resultado[$i].modelo_placa +
+								"</td><td class='p'>" + $resultado[$i].precio_placa + "</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
+								"</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
 						}
 					}, 1000)
 				} else if (event.target.innerHTML.includes("Procesadores")) {
@@ -89,9 +91,9 @@
 					setTimeout(function() {
 						$claves = Object.keys($resultado)
 						for ($i = 0; $i < $claves.length; $i++) {
-							$("#tablaPiezas").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_procesador + "</td><td class='p'>" + $resultado[$i].modelo_procesador +
-								"</td><td class='p'>" + $resultado[$i].precio_procesador + "</td><td class='p'><a href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
-								"</td><td class='p'><a href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
+							$("#presupuestoTabla").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_procesador + "</td><td class='p'>" + $resultado[$i].modelo_procesador +
+								"</td><td class='p'>" + $resultado[$i].precio_procesador + "</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
+								"</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
 						}
 					}, 1000)
 				} else if (event.target.innerHTML.includes("Ventiladores de procesador")) {
@@ -100,9 +102,9 @@
 					setTimeout(function() {
 						$claves = Object.keys($resultado)
 						for ($i = 0; $i < $claves.length; $i++) {
-							$("#tablaPiezas").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_cooler + "</td><td class='p'>" + $resultado[$i].modelo_cooler +
-								"</td><td class='p'>" + $resultado[$i].precio_cooler + "</td><td class='p'><a href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
-								"</td><td class='p'><a href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
+							$("#presupuestoTabla").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_cooler + "</td><td class='p'>" + $resultado[$i].modelo_cooler +
+								"</td><td class='p'>" + $resultado[$i].precio_cooler + "</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
+								"</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
 						}
 					}, 1000)
 				} else if (event.target.innerHTML.includes("RAM")) {
@@ -111,9 +113,9 @@
 					setTimeout(function() {
 						$claves = Object.keys($resultado)
 						for ($i = 0; $i < $claves.length; $i++) {
-							$("#tablaPiezas").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_ram + "</td><td class='p'>" + $resultado[$i].modelo_ram +
-								"</td><td class='p'>" + $resultado[$i].precio_ram + "</td><td class='p'><a href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
-								"</td><td class='p'><a href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
+							$("#presupuestoTabla").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_ram + "</td><td class='p'>" + $resultado[$i].modelo_ram +
+								"</td><td class='p'>" + $resultado[$i].precio_ram + "</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
+								"</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
 						}
 					}, 1000)
 				} else if (event.target.innerHTML.includes("Tarjetas gráficas")) {
@@ -122,9 +124,9 @@
 					setTimeout(function() {
 						$claves = Object.keys($resultado)
 						for ($i = 0; $i < $claves.length; $i++) {
-							$("#tablaPiezas").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_grafica + "</td><td class='p'>" + $resultado[$i].modelo_grafica +
-								"</td><td class='p'>" + $resultado[$i].precio_grafica + "</td><td class='p'><a href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
-								"</td><td class='p'><a href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
+							$("#presupuestoTabla").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_grafica + "</td><td class='p'>" + $resultado[$i].modelo_grafica +
+								"</td><td class='p'>" + $resultado[$i].precio_grafica + "</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
+								"</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
 						}
 					}, 1000)
 				} else if (event.target.innerHTML.includes("Fuentes de alimentación")) {
@@ -133,9 +135,9 @@
 					setTimeout(function() {
 						$claves = Object.keys($resultado)
 						for ($i = 0; $i < $claves.length; $i++) {
-							$("#tablaPiezas").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_fuente + "</td><td class='p'>" + $resultado[$i].modelo_fuente +
-								"</td><td class='p'>" + $resultado[$i].precio_fuente + "</td><td class='p'><a href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
-								"</td><td class='p'><a href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
+							$("#presupuestoTabla").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_fuente + "</td><td class='p'>" + $resultado[$i].modelo_fuente +
+								"</td><td class='p'>" + $resultado[$i].precio_fuente + "</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
+								"</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
 						}
 					}, 1000)
 				} else if (event.target.innerHTML.includes("Unidades de almacenamiento")) {
@@ -144,9 +146,9 @@
 					setTimeout(function() {
 						$claves = Object.keys($resultado)
 						for ($i = 0; $i < $claves.length; $i++) {
-							$("#tablaPiezas").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_disco + "</td><td class='p'>" + $resultado[$i].modelo_disco +
-								"</td><td class='p'>" + $resultado[$i].precio_disco + "</td><td class='p'><a href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
-								"</td><td class='p'><a href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
+							$("#presupuestoTabla").append("<tr class='p'><td class='p'><img class='p' src='" + $resultado[$i].ruta_imagen + "'></td><td class='p'>" + $resultado[$i].marca_disco + "</td><td class='p'>" + $resultado[$i].modelo_disco +
+								"</td><td class='p'>" + $resultado[$i].precio_disco + "</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra1 + "'><img class='tiendas' src='images/logo_pccomponentes.png'></a>" +
+								"</td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra2 + "'><img class='tiendas' src='images/logo_coolmod.png'></a></td><td class='p'><a target='_blank' href='" + $resultado[$i].link_compra3 + "'><img class='tiendas' src='images/logo_amazon.png'></a></td></tr>")
 						}
 					}, 1000)
 				}
@@ -193,7 +195,7 @@
 						</ul>
 					</article>
 					<article class="marg_top2 marg_left1 ">
-						<table id="tablaPiezas">
+						<table id="presupuestoTabla" style="display: none; ">
 							<tr>
 								<th></th>
 								<th>Marca</th>
