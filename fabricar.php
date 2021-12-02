@@ -49,7 +49,7 @@ session_start();
 			idTipo = elemento.id.split("_")[1]
 			id = elemento.id.split("_")[2].split("-")[0]
 
-			$('#piezas_presupuesto').append("<li id='" + idTipo + "_" + id + "' class='" + idTipo + "'>" + tipo + ": " + marca +
+			$('#piezas_presupuesto').append("<li id='" + idTipo + "_" + id + "' class='" + idTipo + "'><strong>" + tipo + "</strong>: " + marca +
 				" " + modelo + " <span>" + precio + " €" + "</span></li>")
 
 			actualizarPrecio()
@@ -510,7 +510,7 @@ session_start();
 	</script>
 </head>
 
-<body id="page3">
+<body id="page1">
 	<div class="body1">
 		<div class="body2">
 			<div class="main">
@@ -527,34 +527,45 @@ session_start();
 
 	<!-- content -->
 
-	<div class="body3">
-		<div class="main" style="width: 100%; height: 1400px;">
-			<section id="content2">
-				<div class="box3">
-					<h3>Bienvenido a la fábrica Obrex</h3>
-					<p>Aquí podras hacer tu presupuesto sin preocuparte de si las piezas con compatibles o no,
-						ya que la fábrica solo mostrará las piezas compatibles entre si.<br>
-						<span>Solo necesitas arrastrar la pieza a la zona designada para añadirla.<br>
-							Para borrar la selección solo tienes que poner el ratón encima y dar un click.</span>
-					</p>
-					<div id="presupuesto">
-						<h3>PRESUPUESTO</h3>
-						<div id="pres_grid">
-							<div>
-								<h3>Componentes</h3>
-								<ul id="piezas_presupuesto">
-								</ul>
-							</div>
-							<div>
-								<p id="precio_total"></p>
-								<button type="button" class="button2" id="guardar_boton" onclick="guardarPresupuesto()">Guardar en perfil</button>
-								<p class="info_p" id="info_p_1"></p>
-							</div>
 
+	<div class="main" style="width: 100%;">
+		<section id="content2">
+			<div class="box3">
+				<h3>Bienvenido a la fábrica Obrex</h3>
+				<!-- 					<p>Aquí podras hacer tu presupuesto sin preocuparte de si las piezas con compatibles o no,
+						ya que la fábrica solo mostrará las piezas compatibles entre si.<br> -->
+				<div id="instrucciones"><strong>Instrucciones</strong><br>
+					<span>
+						-Puedes ver la web del fabricante solo con dar click a las fotos en la tabla<br>
+						-Solo necesitas arrastrar la pieza a la zona designada para añadirla.<br>
+						-Para borrar la pieza solo tienes que poner el ratón encima y dar un click.<br>
+						-Puedes guardar el presupuesto en tu cuenta una vez te hayas logueado.<br>
+						-Y lo mas importante, SOLO TIENES QUE PREOCUPARTE DEL PRECIO ya que todas las piezas mostradas son compatibles entre si.
+					</span>
+				</div>
+				<div id="presupuesto">
+					<h3>PRESUPUESTO</h3>
+					<div id="pres_grid">
+						<div>
+							<h3>Componentes</h3>
+							<ul id="piezas_presupuesto">
+							</ul>
+						</div>
+						<div>
+							<p id="precio_total"></p>
+							<button type="button" class="button2" id="guardar_boton" onclick="guardarPresupuesto()">Guardar en perfil</button>
+							<p class="info_p" id="info_p_1"></p>
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+	</div>
 
+
+	<div class="body3">
+		<div class="main" style="width: 100%;">
+			<section id="content">
 				<div id="grid_fabricar">
 					<div id="acordeon">
 						<ul class="acorh">
@@ -612,12 +623,15 @@ session_start();
 						<div id="contenedor_fuenteAlim" class="contenedor_fabricar" ondrop=drop(event) ondragover="allowDrop(event)"></div>
 						<div id="contenedor_disco" class="contenedor_fabricar" ondrop=drop(event) ondragover="allowDrop(event)"></div>
 					</div>
-
 				</div>
 			</section>
-			<!-- / content  -->
 		</div>
 	</div>
+
+
+
+	<!-- / content  -->
+
 	<div class="main">
 		<!-- / footer -->
 		<footer>

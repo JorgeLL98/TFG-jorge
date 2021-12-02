@@ -51,6 +51,7 @@
 									<span>Contraseña:</span>
 									<input type="password" class="input" name="passwd" required>
 								</div>
+								<!-- ARREGLAR ERRORES DE ERRORES XD -->
 								<div name="e1" id="e1" style="color: red; <?php
 																			if (isset($_GET["e"])) {
 																				if ($_GET["e"] == 1) {
@@ -81,7 +82,9 @@
 																			} else {
 																				echo 'display:none;';
 																			}  ?>">Error desconocido. Inténtelo mas tarde</div>
-								<input type="submit" class="button1" name="login" id="submit">
+								<input type="submit" class="button1" name="login" id="submit" value="Entrar">
+
+								<!-- ARREGLAR BOTON DE BORRAR -->
 								<a href="#" class="button1" onClick="document.getElementById('ContactForm').reset()">Borrar</a>
 							</div>
 						</form>

@@ -178,8 +178,8 @@
 		<div class="main" style="width: 90%;">
 			<section id="content2">
 
-				<div class="grid_piezas">
-					<article class="border_rigth">
+				<div class="grid_piezas menu_ul">
+					<article class="border_rigth menu_ul">
 						<h3>Piezas</h3>
 						<ul id="a_piezas">
 							<li><a class="options">Torres</a></li>

@@ -17,7 +17,6 @@ if (isset($_POST["register"])) {
             header("Location: ../login.php");
             exit();
         } else {
-
             header("Location: ../registro.php?e=1");
             exit();
         }
@@ -43,8 +42,7 @@ if (isset($_POST["login"])) {
 
     $row = mysqli_fetch_row(mysqli_query($con, $seleccionar));
 
-    if ($row == null) {
-
+    if ($row == 0) {
         header("Location: ../login.php?e=1");
         exit();
     } else if ($email == $row[3] && $contra === $row[4]) {
@@ -56,7 +54,7 @@ if (isset($_POST["login"])) {
         }
         header("Location: ../index.php");
         exit();
-    } else if ($email != $row[3] && $contra != $row[4]) {
+    } else if ($email != $row[3] || $contra != $row[4]) {
         header("Location: ../login.php?e=2");
         exit();
     } else {
@@ -134,5 +132,3 @@ if (isset($_POST["perfil"])) {
 
     $con->close();
 }
-
-

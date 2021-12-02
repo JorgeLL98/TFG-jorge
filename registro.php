@@ -56,6 +56,11 @@
 										<span>Contraseña:</span>
 										<input type="password" class="input" name="passwd" required>
 									</div>
+									<div class="wrapper">
+										<input type="checkbox" name="tyc" required>
+										<span>Términos y condiciones</span>
+
+									</div>
 
 									<div name="e1" id="e1" style="color: red; <?php
 																				if (isset($_GET["e"])) {
@@ -87,7 +92,7 @@
 																				} else {
 																					echo 'display:none;';
 																				}  ?>">Error desconocido. Inténtelo mas tarde</div>
-									<input type="submit" class="button1" name="register" id="suit">
+									<input type="submit" class="button1" name="register" id="suit" value="Registarme">
 									<a href="#" class="button1" onClick="document.getElementById('ContactForm').reset()">Borrar</a>
 								</div>
 							</form>

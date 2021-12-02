@@ -17,18 +17,35 @@
 	<script type="text/javascript">
 		var precioTotal = 0
 
-		function pidoPresupuesto() {
+
+		
+		function borrarPresupuesto(id) {
+			pidoPresupuesto("borrarPresupuesto_" + id + "")
+			setTimeout(function() {
+				$('#mis_ordenadores').append($resultado)
+			}, 700)
+
+			pidoPresupuesto("pedirPresupuesto")
+			setTimeout(function() {
+				window.location.reload()
+
+			}, 1000)
+
+
+		}
+
+		function pidoPresupuesto(str) {
 			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 					$resultado = jQuery.parseJSON(this.responseText);
 				}
 			};
-			xmlhttp.open("GET", "php-manejoDatos/fabricar_pc.php?q=pedirPresupuesto");
+			xmlhttp.open("GET", "php-manejoDatos/fabricar_pc.php?q=" + str + "");
 			xmlhttp.send();
 		}
 
-		pidoPresupuesto()
+		pidoPresupuesto("pedirPresupuesto")
 		window.addEventListener("load", function() {
 			var bienvenida = document.getElementById("mens_bienvenida");
 			bienvenida.innerHTML = "¡Bienvenido " + getCookie("nombre") + ", este es tu perfil!";
@@ -37,43 +54,36 @@
 
 				var mi_cuenta = document.getElementById("mi_cuenta")
 				var mis_ordenadores = document.getElementById("mis_ordenadores")
-				if (event.target.innerHTML.includes("Mi cuenta")) {
+				if (event.target.innerHTML.includes("Cambiar mi cuenta")) {
 					mis_ordenadores.style.display = "none"
 					mi_cuenta.style.display = "block"
-
-
 				} else if (event.target.innerHTML.includes("Mis ordenadores")) {
 					$("#presupuestoTabla").empty()
 					mi_cuenta.style.display = "none"
 					mis_ordenadores.style.display = "block"
-
 					if ($resultado[0].estado == 3) {
 						document.getElementById("e3").style.display = "block"
 					} else {
 
+						$claves = Object.keys($resultado)
+						for ($i = 0; $i < $claves.length; $i++) {
+							precioTotal = parseInt($resultado[$i].torre_p.split("|")[2]) + parseInt($resultado[$i].placa_p.split("|")[2]) +
+								parseInt($resultado[$i].procesador_p.split("|")[2]) + parseInt($resultado[$i].ventprocesador_p.split("|")[2]) +
+								parseInt($resultado[$i].ram_p.split("|")[2]) + parseInt($resultado[$i].grafica_p.split("|")[2]) +
+								parseInt($resultado[$i].fuentealim_p.split("|")[2]) + parseInt($resultado[$i].disco_p.split("|")[2]) + "€"
 
-
-						setTimeout(function() {
-							$claves = Object.keys($resultado)
-							for ($i = 0; $i < $claves.length; $i++) {
-								precioTotal = parseInt($resultado[$i].torre_p.split("|")[2]) + parseInt($resultado[$i].placa_p.split("|")[2]) +
-									parseInt($resultado[$i].procesador_p.split("|")[2]) + parseInt($resultado[$i].ventprocesador_p.split("|")[2]) +
-									parseInt($resultado[$i].ram_p.split("|")[2]) + parseInt($resultado[$i].grafica_p.split("|")[2]) +
-									parseInt($resultado[$i].fuentealim_p.split("|")[2]) + parseInt($resultado[$i].disco_p.split("|")[2]) + "€"
-
-								$("#presupuestoTabla").append("<table><tr><th>Torre</th><th>Placa Base</th><th>Procesador</th> " +
-									"<th>Cooler</th><th>RAM</th><th>Tarjeta gráfica</th><th>Fuente de alimentación</th><th>Disco</th><th>Precio total</th>" +
-									"</tr><tr><td><a href='" + $resultado[$i].torre_p.split("|")[3] + "'>" + $resultado[$i].torre_p.split("|")[0] + " " + $resultado[$i].torre_p.split("|")[1] +
-									"</a></td><td><a href='" + $resultado[$i].placa_p.split("|")[3] + "'>" + $resultado[$i].placa_p.split("|")[0] + " " + $resultado[$i].placa_p.split("|")[1] +
-									"</a></td><td><a href='" + $resultado[$i].procesador_p.split("|")[3] + "'>" + $resultado[$i].procesador_p.split("|")[0] + " " + $resultado[$i].procesador_p.split("|")[1] +
-									"</a></td><td><a href='" + $resultado[$i].ventprocesador_p.split("|")[3] + "'>" + $resultado[$i].ventprocesador_p.split("|")[0] + " " + $resultado[$i].ventprocesador_p.split("|")[1] +
-									"</a></td><td><a href='" + $resultado[$i].ram_p.split("|")[3] + "'>" + $resultado[$i].ram_p.split("|")[0] + " " + $resultado[$i].ram_p.split("|")[1] +
-									"</a></td><td><a href='" + $resultado[$i].grafica_p.split("|")[3] + "'>" + $resultado[$i].grafica_p.split("|")[0] + " " + $resultado[$i].grafica_p.split("|")[1] +
-									"</a></td><td><a href='" + $resultado[$i].fuentealim_p.split("|")[3] + "'>" + $resultado[$i].fuentealim_p.split("|")[0] + " " + $resultado[$i].fuentealim_p.split("|")[1] +
-									"</a></td><td><a href='" + $resultado[$i].disco_p.split("|")[3] + "'>" + $resultado[$i].disco_p.split("|")[0] + " " + $resultado[$i].disco_p.split("|")[1] +
-									"</a></td><td>" + precioTotal + "</td></tr></table><br>")
-							}
-						}, 1000)
+							$("#presupuestoTabla").append("<table><tr><th>Torre</th><th>Placa Base</th><th>Procesador</th> " +
+								"<th>Cooler</th><th>RAM</th><th>Tarjeta gráfica</th><th>Fuente de alimentación</th><th>Disco</th><th>Precio total</th>" +
+								"</tr><tr><td><a class='link2' href='" + $resultado[$i].torre_p.split("|")[3] + "'>" + $resultado[$i].torre_p.split("|")[0] + " " + $resultado[$i].torre_p.split("|")[1] +
+								"</a></td><td><a class='link2' href='" + $resultado[$i].placa_p.split("|")[3] + "'>" + $resultado[$i].placa_p.split("|")[0] + " " + $resultado[$i].placa_p.split("|")[1] +
+								"</a></td><td><a class='link2' href='" + $resultado[$i].procesador_p.split("|")[3] + "'>" + $resultado[$i].procesador_p.split("|")[0] + " " + $resultado[$i].procesador_p.split("|")[1] +
+								"</a></td><td><a class='link2' href='" + $resultado[$i].ventprocesador_p.split("|")[3] + "'>" + $resultado[$i].ventprocesador_p.split("|")[0] + " " + $resultado[$i].ventprocesador_p.split("|")[1] +
+								"</a></td><td><a class='link2' href='" + $resultado[$i].ram_p.split("|")[3] + "'>" + $resultado[$i].ram_p.split("|")[0] + " " + $resultado[$i].ram_p.split("|")[1] +
+								"</a></td><td><a class='link2' href='" + $resultado[$i].grafica_p.split("|")[3] + "'>" + $resultado[$i].grafica_p.split("|")[0] + " " + $resultado[$i].grafica_p.split("|")[1] +
+								"</a></td><td><a class='link2' href='" + $resultado[$i].fuentealim_p.split("|")[3] + "'>" + $resultado[$i].fuentealim_p.split("|")[0] + " " + $resultado[$i].fuentealim_p.split("|")[1] +
+								"</a></td><td><a class='link2' href='" + $resultado[$i].disco_p.split("|")[3] + "'>" + $resultado[$i].disco_p.split("|")[0] + " " + $resultado[$i].disco_p.split("|")[1] +
+								"</a></td><td>" + precioTotal + "<button onclick='borrarPresupuesto(" + $resultado[$i].id_presupuesto + ")'>Borrar</button></td></tr></table><br>")
+						}
 					}
 
 				} else if (event.target.innerHTML.includes("Cerrar sesión")) {
@@ -116,13 +126,13 @@
 		</section>
 	</div>
 	<div class="body3">
-		<div class="main">
+		<div class="main" style="width: 70%;">
 			<section id="content">
 				<div class="grid_perfil">
-					<article class="border_rigth">
-						<h3>Tu perfil</h3>
+					<article class="border_rigth menu_ul">
+						<h3>Mi cuenta</h3>
 						<ul id="a_perfil">
-							<li><a class="options">Mi cuenta</a></li>
+							<li><a class="options">Cambiar mi cuenta</a></li>
 							<li><a class="options">Mis ordenadores</a></li>
 							<li><a class="options">Cerrar sesión</a></li>
 						</ul>
@@ -178,13 +188,12 @@
 																				} else {
 																					echo 'display:none;';
 																				}  ?>">Contraseña anterior incorrecta</div>
-									<input type="submit" class="button1" name="perfil" id="submit">
-									<a href="#" class="button1" onClick="document.getElementById('ContactForm').reset()">Borrar</a>
+									<input type="submit" class="button1" name="perfil" id="submit" style="float: left;">
+									<a href=" #" class="button1" onClick="document.getElementById('ContactForm').reset()" style="float: left;">Borrar</a>
 								</div>
 							</form>
 						</div>
 						<div id="mis_ordenadores" style="display: none;">
-							<!-- presupuestos -->
 							<div id="presupuestoTabla"></div>
 							<div name="e3" id="e3" style="color: red; display:none;">No existen presupuestos</div>
 						</div>

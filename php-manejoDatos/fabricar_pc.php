@@ -294,6 +294,15 @@ if ($_GET["q"] == "torres") {
         }
         echo json_encode($results);
     }
+} else if (preg_match("/borrarPresupuesto_\d/", $_GET["q"])) {
+    $id = intval(explode("_", $_GET["q"])[1]);
+    $borrarPresupuesto = 'DELETE FROM presupuestos WHERE ID_PRESUPUESTOS = ' . $id . ';';
+
+    if (mysqli_query($con, $borrarPresupuesto)) {
+        echo json_encode("<p style='color:green;'>El presupuesto ha sido borrado correctamente</p>");
+    } else {
+        echo json_encode("<p style='color:red;'>El presupuesto no ha podido ser borrado</p>");
+    }
 }
 
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+
 /* Getting the new tags to behave */
 article,
 aside,
@@ -99,7 +101,7 @@ body {
 }
 
 /* ============================= main layout ====================== */
-a {
+/* a {
     color: #dd00ff;
     text-decoration: underline;
     outline: none
@@ -107,7 +109,7 @@ a {
 
 a:hover {
     text-decoration: none
-}
+} */
 
 h1 {
     float: left;
@@ -167,10 +169,10 @@ header {
 
 .call {
     float: right;
-    font-size: 21px;
+    font-size: 18px;
     color: #888;
     line-height: 1.2em;
-    padding: 4px 3px 0 0
+    padding: 6px 7px 0 0
 }
 
 .call span {
@@ -273,14 +275,58 @@ header {
 
 /*-------------------------------------------------------------*/
 
+.flex_index {
+    display: flex;
+    margin: auto;
 
+}
 
+.flex_index p {
+    line-height: 1.5em;
+    width: 300px;
+    margin: 50px;
+}
+
+.img_index {
+    width: 400px;
+    margin: 10px;
+}
+
+.menu_ul {
+    all: unset;
+    min-width: 222px;
+}
+
+.menu_ul h3 {
+    font-weight: 400;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.menu_ul ul {}
+
+.menu_ul ul li {
+
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 13px;
+    border-bottom: 1px solid #888;
+}
+
+.menu ul li:hover {
+    color: white;
+    transition: 1s;
+}
+
+#mens_bienvenida+p {
+    font-size: 17px;
+}
 
 #acordeon {
-    margin-left: 5%;
+    margin-left: 10%;
     padding: 0;
     border: 0;
-
+    max-width: 80%;
 }
 
 ul.acorh,
@@ -418,6 +464,8 @@ ul.acorh li li a {
 .pad_bot2 {
     padding-bottom: 20px
 }
+
+
 
 .marg_right1 {
     margin-right: 29px
@@ -632,8 +680,6 @@ figure {
     margin-top: 50px;
 }
 
-
-
 .box .button1 {
     display: block;
     letter-spacing: -1px;
@@ -647,6 +693,15 @@ figure {
     margin-bottom: 3em;
     border-top: grey solid 3px;
     border-bottom: grey solid 3px;
+    font-size: medium;
+}
+
+#instrucciones {
+    line-height: 1.5em;
+}
+
+#instrucciones strong {
+    margin-bottom: 10px;
 }
 
 .box3 h2 {}
@@ -669,8 +724,11 @@ figure {
 
 }
 
+.grid_perfil article:nth-of-type(2) {
+    padding: 0;
+    margin-left: 78px;
+}
 
-#a_perfil {}
 
 .grid_piezas {
     display: grid !important;
@@ -689,27 +747,69 @@ figure {
 
 #grid_fabricar {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
 
 
 }
 
+#presupuestoTabla {
+    
+
+}
+
+#presupuestoTabla table {
+
+    margin-bottom: 35px;
+    border-top: 7px inset rgb(160, 159, 159);
+    border-left: 7px inset rgb(160, 159, 159);
+    
+    padding: 15px !important;
+
+}
+
+#presupuestoTabla tr {
+    width: 40px;
+    margin: 10px;
+    font-size: 15px;
+    
 
 
-#presupuestoTabla {}
+}
+
+#presupuestoTabla th {
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
+    
+    border-right: 1px solid rgb(160, 159, 159) !important;
+    width: 50px !important;
+}
+
+#presupuestoTabla td {
+    border-left: 1px solid rgb(160, 159, 159);
+    border-right: 1px solid rgb(160, 159, 159);
+    border-top: 1px solid rgb(160, 159, 159);
+    padding: 14px;
+    text-align: center;
+    width: 50px !important;
+
+}
+
+#presupuestoTabla td a {}
+
+#presupuestoTabla button {
+    margin-top: 30px;
+}
 
 
 #presupuesto {
     width: 100%;
-    height: 300px;
+    height: 320px;
     background: #111;
-    /* padding: 35px 0px 40px; */
     text-align: center;
     margin-top: 40px;
     border-top: #75b9ce7e solid 3px;
     border-bottom: #75b9ce7e solid 3px;
-
-
 }
 
 #pres_grid {
@@ -717,6 +817,7 @@ figure {
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+
 }
 
 #presupuesto h3 {
@@ -744,12 +845,16 @@ figure {
 }
 
 #piezas_presupuesto {
-    font-size: 15px;
+    font-size: 20px;
 
 }
 
-#piezas_presupuesto li span {
+#piezas_presupuesto strong {
+    color: #ffffffc0;
+}
 
+#piezas_presupuesto li span {
+    font-weight: bold;
     font-size: 25px;
 }
 
@@ -760,6 +865,7 @@ figure {
 
 .imagen_borrar:hover {
     filter: brightness(70%) !important;
+    cursor: grab;
 }
 
 #container {
@@ -850,6 +956,128 @@ figure {
     align-self: center;
 }
 
+.wrapperLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content h3:nth-child(1) {
+    font-size: 50px;
+}
+
+.wrapperLink article {
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 263px;
+    height: 166px;
+}
+
+
+
+
+.link1 {
+    font-size: xx-large;
+    text-decoration: none;
+    padding: 5px;
+
+
+}
+
+/* .link1 span {
+    position: relative;
+    bottom: 122px;
+    width: 130px;
+    font-size: 23px;
+    color: rgb(221, 0, 255);
+    color: #01c3fe;
+    text-decoration: none;
+    line-height: 30px;
+    display: inline-block;
+    font-family: 'Rajdhani', sans-serif;
+} */
+
+/* .link1 img {
+    width: 250px;
+} */
+
+
+/* .link1:hover {
+     animation: linkAnimation 2s infinite; 
+} */
+
+.link2 {
+    color: rgb(221, 0, 255);
+}
+
+.link2:hover {
+    color: rgba(221, 0, 255, 0.473);
+}
+
+#p_destacado {
+    color: #01c3fe;
+    margin-top: 40px;
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.link1 button {
+    display: inline-block;
+    border-radius: 17px;
+    /* background-color: #b528d8; */
+    /* background-color: rgb(221, 0, 255); */
+    background-color: rgb(160, 148, 148);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 23px;
+    padding: 20px;
+    width: 220px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    opacity: 2;
+}
+
+
+.link1 button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.link1 button span::after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.link1 button:hover span {
+    padding-right: 25px;
+}
+
+.link1 button:hover span::after {
+    opacity: 1;
+    right: 0;
+}
+
+/* ============================= keyframes ====================== */
+/*NO FUNCIONA*/
+@keyframes linkAnimation {
+    0% {
+        background-color: #79bd00;
+    }
+
+    /*     100% {
+        color: #dd00ff;
+    } */
+}
+
 /* ============================= footer ====================== */
 footer {
     text-align: center;
@@ -893,7 +1121,8 @@ footer a:hover {}
 
 #ContactForm .button1 {
     margin-left: 20px;
-    float: right
+    float: right;
+    margin-top: 20px;
 }
 
 #ContactForm .input {
