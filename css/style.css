@@ -288,7 +288,8 @@ header {
 }
 
 .img_index {
-    width: 400px;
+    max-width: 400px;
+    max-height: 484px;
     margin: 10px;
 }
 
@@ -711,6 +712,9 @@ figure {
 
 #instrucciones strong {
     margin-bottom: 10px;
+    text-decoration: underline;
+    font-size: 1.4em;
+    line-height: 2.2em;
 }
 
 .box3 h2 {}
@@ -802,8 +806,8 @@ figure {
 }
 
 #presupuestoTabla td a {
-line-height: 5px;
-font-size: 12px;
+    line-height: 5px;
+    font-size: 12px;
 
 }
 
@@ -829,7 +833,7 @@ font-size: 12px;
 #pres_grid {
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     place-items: center;
 
 }
@@ -1080,6 +1084,11 @@ font-size: 12px;
     right: 0;
 }
 
+#pag_piezas {
+    width: 90%;
+}
+
+
 /* ============================= keyframes ====================== */
 
 
@@ -1232,4 +1241,131 @@ footer a:hover {}
     color: #fff
 }
 
-@media all and (max-width: 850px) {}
+@media all and (max-width: 600px) {
+
+    /*-----HEADER-----*/
+    #logo {
+        width: 83px;
+        height: 81px;
+    }
+
+    #page1 #menu {
+        padding: 78px 154px 0 0;
+    }
+
+    #menu li a {
+        font-size: 30px;
+    }
+
+    /*-----///HEADER-----*/
+
+    /*-----BODY-----*/
+    body {
+
+
+        width: fit-content;
+    }
+
+    p {
+        font-size: 1.3em;
+    }
+
+    #page1 {
+        width: fit-content;
+    }
+
+    .body2 {
+        width: fit-content;
+    }
+
+    p {
+        font-size: 1.3em;
+        line-height: 1.2em;
+    }
+
+    .body3 {
+        width: fit-content;
+    }
+
+    #instrucciones span,
+    #instrucciones strong {
+        font-size: 1.5em;
+        line-height: 1.2em;
+    }
+
+    #presupuesto {
+        height: 620px;
+    }
+
+    #pres_grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    #presupuesto h3,
+    #presupuesto button {
+        font-size: 1.8em;
+    }
+
+    .flex_index img {
+        margin-top: 64px;
+    }
+
+    #piezas_presupuesto li {
+        font-size: 1.5em;
+        line-height: 1.3em;
+    }
+
+    #container {
+        width: 500px;
+        height: 500px;
+        margin-left: -53px;
+    }
+
+    #contenedor_torre {
+        width: 500px;
+        height: 500px;
+        margin-left: -53px;
+    }
+
+    #contenedor_placa {
+        width: 238px;
+        height: 320px px;
+
+        bottom: 424px;
+        left: 5px;
+    }
+
+    #acordeon {
+        max-width: 288px;
+    }
+
+    .menu_ul h3 {
+        font-size: 2.5em;
+    }
+
+    #a_piezas a {
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+
+    #tabla_Piezas {
+        margin: 0;
+        margin-left: 57px;
+    }
+
+    #pag_piezas {
+        width: 96%;
+    }
+
+    #presupuestoTabla th {
+        font-size: 18px;
+    }
+
+    /*-----///BODY-----*/
+
+    /*-----FOOTER-----*/
+
+    footer a {}
+
+    /*-----///FOOTER-----*/
+}

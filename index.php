@@ -3,7 +3,7 @@
 
 <head>
 	<title>Obrex Home</title>
-	<meta charset="utf-8">
+	<meta charset="utf-8" name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
@@ -16,13 +16,6 @@
 	<!-- <script type="text/javascript" src="js/jquery.jqtransform.js"></script> -->
 	<script type="text/javascript" src="js/funciones.js"></script>
 	<script type="text/javascript">
-		$('#tecla1').click(function() {
-			console.log("a")
-		})
-
-		$('#tecla1').click(function() {
-			console.log("b")
-		})
 	</script>
 </head>
 
@@ -51,12 +44,12 @@
 				<p id="p_destacado">Ya puedes empezar a competir</p>
 				<div class="wrapperLink">
 					<article class="text_align link1">
-						<!-- <a href="#" class="teclaAnimation" id="tecla1"><img src="images/tecla.png"><span>Fabricar presupuesto</span></img></a> -->
+						
 						<button><span>Fabricar presupuesto</span></button>
 					</article>
 
 					<article class="text_align link1">
-						<!-- <a href="#" class="teclaAnimation" id="tecla2"><img src="images/tecla.png"><span>Piezas disponibles</span></img></a> -->
+						
 						<button><span>Piezas disponibles</span></button>
 					</article>
 				</div>

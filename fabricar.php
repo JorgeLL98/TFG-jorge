@@ -6,7 +6,7 @@ session_start();
 
 <head>
 	<title>Obrex Fabricar</title>
-	<meta charset="utf-8">
+	<meta charset="utf-8" name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
@@ -24,8 +24,6 @@ session_start();
 		var time = now.getTime();
 		var expireTime = time + 1000 * 36000;
 		now.setTime(expireTime);
-
-
 
 		function autoEscalarAContenedor(id) {
 			var elemento = getComputedStyle(document.querySelector("#" + id))
@@ -395,13 +393,6 @@ session_start();
 		function envioPresupuesto() {
 			var info = document.getElementById("info_p_1")
 
-			/* var params = new Object()
-			params.torre = sessionStorage.getItem("torre") */
-			/* "torre=" + sessionStorage.getItem("torre") + "&placa=" + sessionStorage.getItem("placa") + "&procesador=" +
-				sessionStorage.getItem("procesador") + "&ventProcesador=" + sessionStorage.getItem("ventProcesador") + "&ram=" +
-				sessionStorage.getItem("ram") + "&grafica=" + sessionStorage.getItem("grafica") + "&fuenteAlim=" +
-				sessionStorage.getItem("fuenteAlim") + "&disco=" + sessionStorage.getItem("disco") */
-
 			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
@@ -414,8 +405,8 @@ session_start();
 				}
 			};
 			xmlhttp.open("POST", "php-manejoDatos/fabricar_pc.php?q=presupuesto", true);
-			/* xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); */
-			xmlhttp.send( /* params */ );
+
+			xmlhttp.send();
 		}
 
 
@@ -428,7 +419,6 @@ session_start();
 		$(window).on("load", function() {
 
 			sessionStorage.clear()
-
 			//BORRAR IMAGENES CON CLASE imagen_borrar
 			document.querySelectorAll('.contenedor_fabricar').forEach(function(elem) {
 				elem.addEventListener("click", function() {
@@ -532,8 +522,6 @@ session_start();
 		<section id="content2">
 			<div class="box3">
 				<h3>Bienvenido a la fábrica Obrex</h3>
-				<!-- 					<p>Aquí podras hacer tu presupuesto sin preocuparte de si las piezas con compatibles o no,
-						ya que la fábrica solo mostrará las piezas compatibles entre si.<br> -->
 				<div id="instrucciones"><strong>Instrucciones</strong><br>
 					<span>
 						-Puedes ver la web del fabricante solo con dar click a las fotos en la tabla<br>

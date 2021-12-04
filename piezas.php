@@ -3,7 +3,7 @@
 
 <head>
 	<title>Obrex Hardware</title>
-	<meta charset="utf-8">
+	<meta charset="utf-8" name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
@@ -62,7 +62,7 @@
 
 			$("#a_piezas").click(function(event) {
 				document.getElementById("presupuestoTabla").style.display = "block"
-				
+
 				if (event.target.innerHTML.includes("Torres")) {
 					$(".p").remove()
 					pidoPiezas("torres")
@@ -177,7 +177,7 @@
 
 	<!-- content -->
 	<div class="body3">
-		<div class="main" style="width: 90%;">
+		<div class="main" id="pag_piezas">
 			<section id="content2">
 
 				<div class="grid_piezas menu_ul">
@@ -194,7 +194,7 @@
 							<li><a class="options">Unidades de almacenamiento</a></li>
 						</ul>
 					</article>
-					<article class="marg_top2 marg_left1 ">
+					<article class="marg_top2 marg_left1" id="tabla_Piezas">
 						<table id="presupuestoTabla" style="display: none; ">
 							<tr>
 								<th></th>
