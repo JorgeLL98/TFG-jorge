@@ -12,10 +12,6 @@ session_start();
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 	<link rel="icon" href="images/logo.ico" type="image/x-icon" media="all">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<!-- <script type="text/javascript" src="js/cufon-yui.js"></script>
-	<script type="text/javascript" src="js/cufon-replace.js"></script> 
-	<script type="text/javascript" src="js/Shanti_400.font.js"></script>
-	<script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>-->
 	<script type="text/javascript" src="js/funciones.js"></script>
 	<script type="text/javascript">
 		var elementDrag
@@ -389,14 +385,14 @@ session_start();
 		}
 
 
-		//PROBAR
+		
 		function envioPresupuesto() {
 			var info = document.getElementById("info_p_1")
 
 			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					/* var presupuesto = this.responseText */
+					
 					console.log(this.responseText)
 
 					info.innerHTML = "Presupuesto guardado correctamente en perfil"

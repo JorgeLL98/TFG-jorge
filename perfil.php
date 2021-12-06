@@ -9,10 +9,6 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 	<link rel="icon" href="images/logo.ico" type="image/x-icon" media="all">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<!-- <script type="text/javascript" src="js/cufon-yui.js"></script>
-	<script type="text/javascript" src="js/cufon-replace.js"></script> 
-	<script type="text/javascript" src="js/Shanti_400.font.js"></script>
-	<script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>-->
 	<script type="text/javascript" src="js/funciones.js"></script>
 	<script type="text/javascript">
 		var precioTotal = 0
@@ -128,7 +124,7 @@
 		</section>
 	</div>
 	<div class="body3">
-		<div class="main" style="width: 70%;">
+		<div class="main" id="perfil_main">
 			<section id="content">
 				<div class="grid_perfil">
 					<article class="border_rigth menu_ul">
@@ -149,7 +145,6 @@
 							<h3>Cambiar mi cuenta</h3>
 							<form id="ContactForm" method="POST" action="php-manejoDatos/datos-user.php">
 								<div>
-									<!--REVISAR -->
 									<div class="wrapper">
 										<span class="perfil_c">Nuevo nombre:</span>
 										<input type="text" class="input" name="name_nuevo">

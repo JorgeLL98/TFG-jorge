@@ -101,15 +101,6 @@ body {
 }
 
 /* ============================= main layout ====================== */
-/* a {
-    color: #dd00ff;
-    text-decoration: underline;
-    outline: none
-}
-
-a:hover {
-    text-decoration: none
-} */
 
 h1 {
     float: left;
@@ -740,6 +731,7 @@ figure {
 .grid_perfil article:nth-of-type(2) {
     padding: 0;
     margin-left: 78px;
+    text-align: -webkit-center;
 }
 
 
@@ -1002,27 +994,6 @@ figure {
 
 }
 
-/* .link1 span {
-    position: relative;
-    bottom: 122px;
-    width: 130px;
-    font-size: 23px;
-    color: rgb(221, 0, 255);
-    color: #01c3fe;
-    text-decoration: none;
-    line-height: 30px;
-    display: inline-block;
-    font-family: 'Rajdhani', sans-serif;
-} */
-
-/* .link1 img {
-    width: 250px;
-} */
-
-
-/* .link1:hover {
-     animation: linkAnimation 2s infinite; 
-} */
 
 .link2 {
     color: rgb(221, 0, 255);
@@ -1043,8 +1014,6 @@ figure {
 .link1 button {
     display: inline-block;
     border-radius: 17px;
-    /* background-color: #b528d8; */
-    /* background-color: rgb(221, 0, 255); */
     background-color: rgb(160, 148, 148);
     border: none;
     color: #FFFFFF;
@@ -1087,6 +1056,14 @@ figure {
 #pag_piezas {
     width: 90%;
 }
+
+#perfil_main {
+    width: 90%;
+    align-self: center;
+}
+
+
+.grid_perfil article:nth-of-type(2)
 
 
 /* ============================= keyframes ====================== */
@@ -1187,7 +1164,6 @@ footer a:hover {}
     display: block;
     background-image: url(../images/checkbox.gif);
     background-position: top
-        /*display:-moz-inline-block;*/
 }
 
 .jqTransformCheckbox.jqTransformChecked {
@@ -1255,6 +1231,10 @@ footer a:hover {}
 
     #menu li a {
         font-size: 30px;
+    }
+
+    .call {
+        padding: 14px 214px 0 0;
     }
 
     /*-----///HEADER-----*/
@@ -1350,22 +1330,306 @@ footer a:hover {}
 
     #tabla_Piezas {
         margin: 0;
-        margin-left: 57px;
+        margin-left: 22px;
     }
 
     #pag_piezas {
         width: 96%;
     }
 
+
     #presupuestoTabla th {
         font-size: 18px;
     }
+
+    #perfil_main {
+        width: 100%;
+    }
+
 
     /*-----///BODY-----*/
 
     /*-----FOOTER-----*/
 
-    footer a {}
+    footer a {
+        font-size: 1.3em;
+    }
 
     /*-----///FOOTER-----*/
+}
+
+@media all and (max-width: 915px) {
+    body {
+        width: fit-content;
+    }
+
+    #page1 {
+        width: fit-content;
+    }
+
+    .body2 {
+        width: fit-content;
+    }
+
+
+    .body3 {
+        width: fit-content;
+    }
+
+    #instrucciones span,
+    #instrucciones strong {
+        font-size: 1.5em;
+        line-height: 1.2em;
+    }
+
+    #presupuesto {
+        height: 620px;
+    }
+
+    #pres_grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    #presupuesto h3,
+    #presupuesto button {
+        font-size: 1.8em;
+    }
+
+    .flex_index img {
+        margin-top: 64px;
+    }
+
+    #piezas_presupuesto li {
+        font-size: 1.5em;
+        line-height: 1.3em;
+    }
+
+    #container {
+        width: 500px;
+        height: 500px;
+        margin-left: -53px;
+    }
+
+    #contenedor_torre {
+        width: 500px;
+        height: 500px;
+        margin-left: -53px;
+    }
+
+    #contenedor_placa {
+        width: 238px;
+        height: 320px px;
+
+        bottom: 424px;
+        left: 5px;
+    }
+
+    #acordeon {
+        max-width: 288px;
+    }
+
+    .menu_ul h3 {
+        font-size: 2.5em;
+    }
+
+    #perfil_main {
+        width: 100%;
+    }
+
+}
+
+@media all and (max-width: 1550px) {
+
+    /* #instrucciones span,
+    #instrucciones strong {
+        font-size: 1.5em;
+        line-height: 1.2em;
+    }
+
+    #presupuesto {
+        height: 620px;
+    }
+
+    #pres_grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    #presupuesto h3,
+    #presupuesto button {
+        font-size: 1.8em;
+    }
+
+    .flex_index img {
+        margin-top: 64px;
+    }
+
+    #piezas_presupuesto li {
+        font-size: 1.5em;
+        line-height: 1.3em;
+    }
+
+    #container {
+        width: 500px;
+        height: 500px;
+        margin-left: -53px;
+    }
+
+    #contenedor_torre {
+        width: 500px;
+        height: 500px;
+        margin-left: -53px;
+    }
+
+    #contenedor_placa {
+        width: 238px;
+        height: 320px px;
+
+        bottom: 424px;
+        left: 5px;
+    }
+
+    #acordeon {
+        max-width: 288px;
+    }
+
+    .menu_ul h3 {
+        font-size: 2.5em;
+    }
+
+
+    #ContactForm .wrapper,
+    .miscellaneous #ContactForm .button1 {
+        font-size: 1.3em;
+    }
+
+    #page5 .pad_bot1 {
+        font-size: 2em;
+    }
+
+    .call {
+        padding: 9px 214px 0 0;
+    }
+
+    #perfil_main {
+        width: 95%;
+
+    }
+
+    .grid_perfil article:nth-of-type(2) {
+        margin: 0;
+    } */
+
+
+
+
+
+
+    /*-----------------------------AQUI-----------------------------------*/
+
+    /*     .grid_perfil {}
+
+    .menu_ul {}
+
+    .grid_perfil article:nth-of-type(2) {}
+
+
+    #presupuestoTabla table {
+
+        margin-bottom: 35px;
+        border-top: 7px inset rgb(160, 159, 159);
+        border-left: 7px inset rgb(160, 159, 159);
+
+        padding: 15px !important;
+
+    }
+
+    #presupuestoTabla tr {
+        width: 40px;
+        margin: 10px;
+        font-size: 15px;
+
+    }
+
+    #presupuestoTabla th {
+        font-size: 20px;
+        padding: 15px;
+        text-align: center;
+
+        border-right: 1px solid rgb(160, 159, 159) !important;
+        width: 50px !important;
+    }
+
+    #presupuestoTabla td {
+        border-left: 1px solid rgb(160, 159, 159);
+        border-right: 1px solid rgb(160, 159, 159);
+        border-top: 1px solid rgb(160, 159, 159);
+        padding: 14px;
+        text-align: center;
+        width: 50px !important;
+
+    }
+
+    #presupuestoTabla td a {
+        line-height: 5px;
+        font-size: 12px;
+
+    } */
+}
+
+@media all and (min-width: 1024px) and (min-height: 1366px) {
+
+
+/*          #perfil_main {
+        width: 100%;
+    } 
+
+
+    .grid_perfil {}
+
+    .menu_ul {}
+
+    .grid_perfil article:nth-of-type(2) {}
+
+
+    #presupuestoTabla table {
+
+        margin-bottom: 35px;
+        border-top: 7px inset rgb(160, 159, 159);
+        border-left: 7px inset rgb(160, 159, 159);
+
+        padding: 15px !important;
+
+    }
+
+    #presupuestoTabla tr {
+        width: 40px;
+        margin: 10px;
+        font-size: 15px;
+
+    }
+
+    #presupuestoTabla th {
+        font-size: 20px;
+        padding: 15px;
+        text-align: center;
+
+        border-right: 1px solid rgb(160, 159, 159) !important;
+        width: 50px !important;
+    }
+
+    #presupuestoTabla td {
+        border-left: 1px solid rgb(160, 159, 159);
+        border-right: 1px solid rgb(160, 159, 159);
+        border-top: 1px solid rgb(160, 159, 159);
+        padding: 14px;
+        text-align: center;
+        width: 50px !important;
+
+    }
+
+    #presupuestoTabla td a {
+        line-height: 5px;
+        font-size: 12px;
+
+    } */
 }

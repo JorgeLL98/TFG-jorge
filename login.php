@@ -9,10 +9,6 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 	<link rel="icon" href="images/logo.ico" type="image/x-icon" media="all">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<!-- <script type="text/javascript" src="js/cufon-yui.js"></script>
-	<script type="text/javascript" src="js/cufon-replace.js"></script> 
-	<script type="text/javascript" src="js/Shanti_400.font.js"></script>
-	<script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>-->
 	<script type="text/javascript" src="js/funciones.js"></script>
 </head>
 
@@ -51,7 +47,6 @@
 									<span>Contraseña:</span>
 									<input type="password" class="input" name="passwd" required>
 								</div>
-								<!-- ARREGLAR ERRORES DE ERRORES XD -->
 								<div name="e1" id="e1" style="color: red; <?php
 																			if (isset($_GET["e"])) {
 																				if ($_GET["e"] == 1) {
@@ -84,7 +79,6 @@
 																			}  ?>">Error desconocido. Inténtelo mas tarde</div>
 								<input type="submit" class="button1" name="login" id="submit" value="Entrar">
 
-								<!-- ARREGLAR BOTON DE BORRAR -->
 								<a href="#" class="button1" onClick="document.getElementById('ContactForm').reset()">Borrar</a>
 							</div>
 						</form>

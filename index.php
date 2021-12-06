@@ -9,11 +9,6 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 	<link rel="icon" href="images/logo.ico" type="image/x-icon" media="all">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<!-- <script type="text/javascript" src="js/cufon-yui.js"></script>
-	<script type="text/javascript" src="js/cufon-replace.js"></script> 
-	<script type="text/javascript" src="js/Shanti_400.font.js"></script>
-	<script type="text/javascript" src="js/Didact_Gothic_400.font.js"></script>-->
-	<!-- <script type="text/javascript" src="js/jquery.jqtransform.js"></script> -->
 	<script type="text/javascript" src="js/funciones.js"></script>
 	<script type="text/javascript">
 	</script>
@@ -44,13 +39,13 @@
 				<p id="p_destacado">Ya puedes empezar a competir</p>
 				<div class="wrapperLink">
 					<article class="text_align link1">
-						
-						<button><span>Fabricar presupuesto</span></button>
+
+						<button><a href="fabricar.php"><span>Fabricar presupuesto</span></a></button>
 					</article>
 
 					<article class="text_align link1">
-						
-						<button><span>Piezas disponibles</span></button>
+
+						<button><a href="piezas.php"><span>Piezas disponibles</span></a></button>
 					</article>
 				</div>
 
@@ -108,9 +103,6 @@
 		</footer>
 		<!-- / footer -->
 	</div>
-	<!-- 	<script type="text/javascript">
-		Cufon.now();
-	</script> -->
 
 </body>
 
