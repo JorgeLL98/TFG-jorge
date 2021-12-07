@@ -1,0 +1,15 @@
+/*
+Para la guia de despliegue completa, visitar el "Documento de memoria final-Jorge Lozano"
+En el apartado "Documentación de despliegue"
+*/
+
+
+XAMPP ->	https://www.apachefriends.org/es/index.html
+
+Mi repositorio de GitHub ->		https://github.com/JorgeLL98/TFG-jorge.git
+
+
+//Al importar el archivo obrex.sql en phpMyAdmin, ya se genera toda la estructura con los datos.
+//El proceso para hacer esto lo explico en el despliegue dentro de la memoria final, pero aqui dejo el código.
+Código SQL de la base de datos -> https://pastebin.com/Wh6e0bwy
+
