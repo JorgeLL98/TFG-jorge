@@ -5,7 +5,7 @@
 	<title>Obrex Perfil</title>
 	<meta charset="utf-8" name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+	<!-- <link rel="stylesheet" href="css/layout.css" type="text/css" media="all"> -->
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 	<link rel="icon" href="images/logo.ico" type="image/x-icon" media="all">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -72,15 +72,15 @@
 
 							$("#presupuestoTabla").append("<table><tr><th>Torre</th><th>Placa Base</th><th>Procesador</th> " +
 								"<th>Cooler</th><th>RAM</th><th>Tarjeta gráfica</th><th>Fuente de alimentación</th><th>Disco</th><th>Precio total</th>" +
-								"</tr><tr><td><a class='link2' href='" + $resultado[$i].torre_p.split("|")[3] + "'>" + $resultado[$i].torre_p.split("|")[0] + " " + $resultado[$i].torre_p.split("|")[1] +
-								"</a></td><td><a class='link2' href='" + $resultado[$i].placa_p.split("|")[3] + "'>" + $resultado[$i].placa_p.split("|")[0] + " " + $resultado[$i].placa_p.split("|")[1] +
-								"</a></td><td><a class='link2' href='" + $resultado[$i].procesador_p.split("|")[3] + "'>" + $resultado[$i].procesador_p.split("|")[0] + " " + $resultado[$i].procesador_p.split("|")[1] +
-								"</a></td><td><a class='link2' href='" + $resultado[$i].ventprocesador_p.split("|")[3] + "'>" + $resultado[$i].ventprocesador_p.split("|")[0] + " " + $resultado[$i].ventprocesador_p.split("|")[1] +
-								"</a></td><td><a class='link2' href='" + $resultado[$i].ram_p.split("|")[3] + "'>" + $resultado[$i].ram_p.split("|")[0] + " " + $resultado[$i].ram_p.split("|")[1] +
-								"</a></td><td><a class='link2' href='" + $resultado[$i].grafica_p.split("|")[3] + "'>" + $resultado[$i].grafica_p.split("|")[0] + " " + $resultado[$i].grafica_p.split("|")[1] +
-								"</a></td><td><a class='link2' href='" + $resultado[$i].fuentealim_p.split("|")[3] + "'>" + $resultado[$i].fuentealim_p.split("|")[0] + " " + $resultado[$i].fuentealim_p.split("|")[1] +
-								"</a></td><td><a class='link2' href='" + $resultado[$i].disco_p.split("|")[3] + "'>" + $resultado[$i].disco_p.split("|")[0] + " " + $resultado[$i].disco_p.split("|")[1] +
-								"</a></td><td>" + precioTotal + "<button onclick='borrarPresupuesto(" + $resultado[$i].id_presupuesto + ")'>Borrar</button></td></tr></table><br>")
+								"</tr><tr><td><a target='_blank' class='link2' href='" + $resultado[$i].torre_p.split("|")[3] + "'>" + $resultado[$i].torre_p.split("|")[0] + " " + $resultado[$i].torre_p.split("|")[1] +
+								"</a></td><td><a target='_blank' class='link2' href='" + $resultado[$i].placa_p.split("|")[3] + "'>" + $resultado[$i].placa_p.split("|")[0] + " " + $resultado[$i].placa_p.split("|")[1] +
+								"</a></td><td><a target='_blank' class='link2' href='" + $resultado[$i].procesador_p.split("|")[3] + "'>" + $resultado[$i].procesador_p.split("|")[0] + " " + $resultado[$i].procesador_p.split("|")[1] +
+								"</a></td><td><a target='_blank' class='link2' href='" + $resultado[$i].ventprocesador_p.split("|")[3] + "'>" + $resultado[$i].ventprocesador_p.split("|")[0] + " " + $resultado[$i].ventprocesador_p.split("|")[1] +
+								"</a></td><td><a target='_blank' class='link2' href='" + $resultado[$i].ram_p.split("|")[3] + "'>" + $resultado[$i].ram_p.split("|")[0] + " " + $resultado[$i].ram_p.split("|")[1] +
+								"</a></td><td><a target='_blank' class='link2' href='" + $resultado[$i].grafica_p.split("|")[3] + "'>" + $resultado[$i].grafica_p.split("|")[0] + " " + $resultado[$i].grafica_p.split("|")[1] +
+								"</a></td><td><a target='_blank' class='link2' href='" + $resultado[$i].fuentealim_p.split("|")[3] + "'>" + $resultado[$i].fuentealim_p.split("|")[0] + " " + $resultado[$i].fuentealim_p.split("|")[1] +
+								"</a></td><td><a target='_blank' class='link2' href='" + $resultado[$i].disco_p.split("|")[3] + "'>" + $resultado[$i].disco_p.split("|")[0] + " " + $resultado[$i].disco_p.split("|")[1] +
+								"</a></td><td>" + precioTotal + "<button onclick='borrarPresupuesto(" + $resultado[$i].id_presupuesto + ")'><img style='cursor: pointer;' class='botonBorrar' src='images/img_boton_borrar.png'></button></td></tr></table><br>")
 						}
 					}
 
@@ -93,7 +93,7 @@
 	</script>
 </head>
 
-<body id="page5">
+<body id="page2">
 	<div class="body1">
 		<div class="body2">
 			<div class="main">

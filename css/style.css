@@ -616,6 +616,10 @@ figure {
     color: #01c3fe
 }
 
+.botonBorrar img {
+
+}
+
 .button1 {
     display: inline-block;
     background: url(../images/button1_bg.gif) top repeat-x;
@@ -1063,7 +1067,7 @@ figure {
 }
 
 
-.grid_perfil article:nth-of-type(2)
+
 
 
 /* ============================= keyframes ====================== */
@@ -1073,7 +1077,9 @@ figure {
 /* ============================= footer ====================== */
 footer {
     text-align: center;
-    padding: 35px 0 46px 0
+    padding: 35px 0 46px 0;
+    letter-spacing: 1px;
+    word-spacing: 10px;
 }
 
 footer a {
@@ -1226,7 +1232,7 @@ footer a:hover {}
     }
 
     #page1 #menu {
-        padding: 78px 154px 0 0;
+        padding: 78px 15px 0 0;
     }
 
     #menu li a {
@@ -1418,7 +1424,7 @@ footer a:hover {}
 
     #contenedor_placa {
         width: 238px;
-        height: 320px px;
+        height: 320px;
 
         bottom: 424px;
         left: 5px;
@@ -1436,200 +1442,4 @@ footer a:hover {}
         width: 100%;
     }
 
-}
-
-@media all and (max-width: 1550px) {
-
-    /* #instrucciones span,
-    #instrucciones strong {
-        font-size: 1.5em;
-        line-height: 1.2em;
-    }
-
-    #presupuesto {
-        height: 620px;
-    }
-
-    #pres_grid {
-        grid-template-columns: 2fr 1fr;
-    }
-
-    #presupuesto h3,
-    #presupuesto button {
-        font-size: 1.8em;
-    }
-
-    .flex_index img {
-        margin-top: 64px;
-    }
-
-    #piezas_presupuesto li {
-        font-size: 1.5em;
-        line-height: 1.3em;
-    }
-
-    #container {
-        width: 500px;
-        height: 500px;
-        margin-left: -53px;
-    }
-
-    #contenedor_torre {
-        width: 500px;
-        height: 500px;
-        margin-left: -53px;
-    }
-
-    #contenedor_placa {
-        width: 238px;
-        height: 320px px;
-
-        bottom: 424px;
-        left: 5px;
-    }
-
-    #acordeon {
-        max-width: 288px;
-    }
-
-    .menu_ul h3 {
-        font-size: 2.5em;
-    }
-
-
-    #ContactForm .wrapper,
-    .miscellaneous #ContactForm .button1 {
-        font-size: 1.3em;
-    }
-
-    #page5 .pad_bot1 {
-        font-size: 2em;
-    }
-
-    .call {
-        padding: 9px 214px 0 0;
-    }
-
-    #perfil_main {
-        width: 95%;
-
-    }
-
-    .grid_perfil article:nth-of-type(2) {
-        margin: 0;
-    } */
-
-
-
-
-
-
-    /*-----------------------------AQUI-----------------------------------*/
-
-    /*     .grid_perfil {}
-
-    .menu_ul {}
-
-    .grid_perfil article:nth-of-type(2) {}
-
-
-    #presupuestoTabla table {
-
-        margin-bottom: 35px;
-        border-top: 7px inset rgb(160, 159, 159);
-        border-left: 7px inset rgb(160, 159, 159);
-
-        padding: 15px !important;
-
-    }
-
-    #presupuestoTabla tr {
-        width: 40px;
-        margin: 10px;
-        font-size: 15px;
-
-    }
-
-    #presupuestoTabla th {
-        font-size: 20px;
-        padding: 15px;
-        text-align: center;
-
-        border-right: 1px solid rgb(160, 159, 159) !important;
-        width: 50px !important;
-    }
-
-    #presupuestoTabla td {
-        border-left: 1px solid rgb(160, 159, 159);
-        border-right: 1px solid rgb(160, 159, 159);
-        border-top: 1px solid rgb(160, 159, 159);
-        padding: 14px;
-        text-align: center;
-        width: 50px !important;
-
-    }
-
-    #presupuestoTabla td a {
-        line-height: 5px;
-        font-size: 12px;
-
-    } */
-}
-
-@media all and (min-width: 1024px) and (min-height: 1366px) {
-
-
-/*          #perfil_main {
-        width: 100%;
-    } 
-
-
-    .grid_perfil {}
-
-    .menu_ul {}
-
-    .grid_perfil article:nth-of-type(2) {}
-
-
-    #presupuestoTabla table {
-
-        margin-bottom: 35px;
-        border-top: 7px inset rgb(160, 159, 159);
-        border-left: 7px inset rgb(160, 159, 159);
-
-        padding: 15px !important;
-
-    }
-
-    #presupuestoTabla tr {
-        width: 40px;
-        margin: 10px;
-        font-size: 15px;
-
-    }
-
-    #presupuestoTabla th {
-        font-size: 20px;
-        padding: 15px;
-        text-align: center;
-
-        border-right: 1px solid rgb(160, 159, 159) !important;
-        width: 50px !important;
-    }
-
-    #presupuestoTabla td {
-        border-left: 1px solid rgb(160, 159, 159);
-        border-right: 1px solid rgb(160, 159, 159);
-        border-top: 1px solid rgb(160, 159, 159);
-        padding: 14px;
-        text-align: center;
-        width: 50px !important;
-
-    }
-
-    #presupuestoTabla td a {
-        line-height: 5px;
-        font-size: 12px;
-
-    } */
 }

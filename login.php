@@ -5,14 +5,14 @@
 	<title>Obrex Login</title>
 	<meta charset="utf-8" name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+	<!-- <link rel="stylesheet" href="css/layout.css" type="text/css" media="all"> -->
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 	<link rel="icon" href="images/logo.ico" type="image/x-icon" media="all">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script type="text/javascript" src="js/funciones.js"></script>
 </head>
 
-<body id="page5">
+<body id="page2">
 	<div class="body1">
 		<div class="body2">
 			<div class="main">

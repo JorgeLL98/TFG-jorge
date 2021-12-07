@@ -88,7 +88,7 @@
 																				} else {
 																					echo 'display:none;';
 																				}  ?>">Error desconocido. Inténtelo mas tarde</div>
-									<input type="submit" class="button1" name="register" id="suit" value="Registarme">
+									<input type="submit" class="button1" name="register" id="suit" value="Registrarme">
 									<a href="#" class="button1" onClick="document.getElementById('ContactForm').reset()">Borrar</a>
 								</div>
 							</form>
