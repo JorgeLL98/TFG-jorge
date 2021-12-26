@@ -386,7 +386,7 @@ session_start();
 
 
 
-		
+
 		function envioPresupuesto() {
 			var info = document.getElementById("info_p_1")
 
